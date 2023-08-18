@@ -31,7 +31,7 @@ export const createUseRemoteComponent = (
 
       loadRemoteModule(url)
         .then(module =>
-          update({ loading: false, err: undefined, component: module[imports] })
+          update({ loading: false, err: undefined, component: module[imports] || module })
         )
         .catch(err => update({ loading: false, err, component: undefined }));
 
